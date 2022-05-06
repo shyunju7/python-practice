@@ -7,6 +7,6 @@ num = int(input())
 for i in range(num, 0, -1):
     print(" " * (i-1) + "*" * (num-i) + "*" + "*" * (num-i))
 
-for i in range(num, 0, -1):
+for i in range(num-1, 0, -1):
     print(" " * (num-i) + "*" * (i-1) + "*" + "*" * (i-1))
 
