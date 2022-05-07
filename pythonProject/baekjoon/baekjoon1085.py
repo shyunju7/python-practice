@@ -7,3 +7,4 @@ xGap = abs(x - w)
 yGap = abs(y - h)
 print(min(x, y, xGap, yGap))
 
+
