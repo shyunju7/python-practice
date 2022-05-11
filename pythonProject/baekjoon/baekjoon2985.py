@@ -1,20 +1,40 @@
-# baekjoon 2576 홀수
+# baekjoon 2986 세수
 # 브론즈 3
-# 수학 구현
+# 수학 구현 사칙연산 많은 조건 분기
+num1, num2, num3 = map(int, input().split())
 
-arr = []
-oddList = []
-
-for _ in range(7):
-    arr.append(int(input()))
-
-for i in range(7):
-    if arr[i] % 2 == 1:
-        oddList.append(arr[i])
-
-if len(oddList) == 0:
-    print(-1)
+# baekjoon 2986 세수
+# 브론즈 3
+# 수학 구현 사칙연산 많은 조건 분기
+num1, num2, num3 = map(int, input().split())
+if max(num1, num2, num3) == num2:
+    if num2 - num3 == num1:
+        print(f"{num1}={num2}-{num3}")
+    else:
+        print(f"{num1}={num2}/{num3}")
 
 else:
-    print(sum(oddList))
-    print(min(oddList))
+    if num1 > num3:
+        if num2 + num3 == num1:
+            print(f"{num1}={num2}+{num3}")
+        else:
+            print(f"{num1}={num2}*{num3}")
+    else:
+        if num2 + num1 == num3:
+            print(f"{num1}+{num2}={num3}")
+        else:
+            print(f"{num1}*{num2}={num3}")
+
+# 풀이 2
+# if num1 == num2 - num3:
+#     print(f"{num1}={num2}-{num3}")
+# elif num1 == num2 / num3:
+#     print(f"{num1}={num2}/{num3}")
+# elif num1 == num2 + num3:
+#     print(f"{num1}={num2}+{num3}")
+# elif num1 == num2 * num3:
+#     print(f"{num1}={num2}*{num3}")
+# elif num1 + num2 == num3:
+#     print(f"{num1}+{num2}={num3}")
+# else:
+#     print(f"{num1}*{num2}={num3}")
