@@ -1,8 +1,7 @@
-# baekjoon 2752 세수
-# 브론즈 3
-# 구현
+# baekjoon 10820 문자열 분석
+# 브론즈 2
+# 구현 문자열
+# 소문자 대문자 숫자 공백
 
-nums = list(map(int, input().split()))
-nums = sorted(nums)
-print(nums[1])
+
 
