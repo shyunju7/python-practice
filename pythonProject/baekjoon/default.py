@@ -79,3 +79,8 @@ name = "현주"
 #print(3,2,1) => 3 2 1
 #print(3,2,1 sep="") => 321
 #print(3,2,1 sep="@") => 3@2@1
+
+
+nums = ["1", "2", "3"]
+print(list(map(int, nums)))
+
