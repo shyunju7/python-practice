@@ -1,19 +1,39 @@
-# baekjoon 2750 수 정렬하기
+# baekjoon 2750 수 정렬하기 1
 # 브론즈 1
-# 구현 정렬
-# n개의 수 오름차순 정렬
-# 미해결
+# 정렬
+import sys
 
-num = int(input())
+# 파이썬3의 최대 재귀 깊이는 1000임으로 임의적으로 파이썬 기본 제귀 깊이 변경 필요
+sys.setrecursionlimit(99999)
+
+
+def quick_sort(nums):
+    if len(nums) <= 1:
+        return nums
+
+    pivot = nums[0]
+    left = []
+    right = []
+
+    for i in range(1, len(nums)):
+        if pivot <= nums[i]:
+            right.append(nums[i])
+        else:
+            left.append(nums[i])
+
+    left = quick_sort(left)
+    right = quick_sort(right)
+
+    left.append(pivot)
+    left.extend(right)
+    return left
+
+
+input = sys.stdin.readline
+n = int(input())
+
 num_arr = []
-for _ in range(num):
+for _ in range(n):
     num_arr.append(int(input()))
-num_arr.sort(reverse=True)
 
-# *리스트명 -> 리스트에 구분자 추가하여 바로 출력
-# print(*num_arr, sep="\n")
-for i in range(num):
-    if i == num -1:
-        print(num_arr[i], end="")
-        break
-    print(num_arr[i])
+print(*quick_sort(num_arr), sep="\n", end="")
