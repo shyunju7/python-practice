@@ -1,8 +1,13 @@
-# baekjoon 2752 세수
-# 브론즈 3
-# 구현
+# baekjoon 10814 나이순 정렬
+# 실버 5
+# 정렬
+import sys
 
-nums = list(map(int, input().split()))
-nums = sorted(nums)
-print(nums[1])
+n = int(sys.stdin.readline())
 
+users = []
+for _ in range(n):
+    line = sys.stdin.readline().rstrip()
+    users.append(line)
+
+print(*sorted(users, key=lambda x: int(x.split()[0])), sep="\n", end="")
